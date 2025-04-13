@@ -7,6 +7,7 @@ namespace App\Livewire\Auth;
 use App\Livewire\Forms\Auth\RegisterForm;
 use App\Livewire\Home;
 use Illuminate\Contracts\View\View;
+use Laravel\Socialite\Facades\Socialite;
 use Livewire\Component;
 
 class Register extends Component
@@ -29,7 +30,7 @@ class Register extends Component
 
     public function google(): void
     {
-        // TODO: Implement Google register
+        $this->redirect(Socialite::driver('google')->redirect()->getTargetUrl());
     }
 
     public function register(): void

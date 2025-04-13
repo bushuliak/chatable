@@ -6,6 +6,7 @@ namespace App\Livewire\Auth;
 
 use App\Livewire\Home;
 use Illuminate\Contracts\View\View;
+use Laravel\Socialite\Facades\Socialite;
 use Livewire\Component;
 use App\Livewire\Forms\Auth\LoginForm;
 
@@ -29,7 +30,7 @@ class Login extends Component
 
     public function google(): void
     {
-        // TODO: Implement Google login
+        $this->redirect(Socialite::driver('google')->redirect()->getTargetUrl());
     }
 
     public function login(): void

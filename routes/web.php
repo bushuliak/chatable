@@ -9,3 +9,4 @@ Route::get('/', Livewire\Home::class)->name('home');
 Route::get('/login', Livewire\Auth\Login::class)->name('login');
 Route::get('/register', Livewire\Auth\Register::class)->name('register');
 Route::get('/logout', Livewire\Auth\Logout::class)->name('logout');
+Route::get('/auth/google/callback', Livewire\Auth\Google\Callback::class)->name('auth-google-callback');
