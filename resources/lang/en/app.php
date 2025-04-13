@@ -6,6 +6,18 @@ return [
     'welcome' => 'Welcome to :app',
     'welcome_back' => 'Welcome back to :app',
 
+    'guest' => 'Guest',
+
+    'actions' => [
+        'login' => 'Sign in',
+        'register' => 'Sign up',
+        'logout' => 'Sign out',
+    ],
+
+    'pages' => [
+        'home' => 'Home',
+    ],
+
     'forms' => [
         'login' => [
             'action' => 'Sign in',

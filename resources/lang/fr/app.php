@@ -6,6 +6,18 @@ return [
     'welcome' => 'Bienvenue sur :app',
     'welcome_back' => 'Bienvenue à nouveau sur :app',
 
+    'guest' => 'Invité',
+
+    'actions' => [
+        'login' => 'Se connecter',
+        'register' => 'S\'inscrire',
+        'logout' => 'Se déconnecter',
+    ],
+
+    'pages' => [
+        'home' => 'Accueil',
+    ],
+
     'forms' => [
         'login' => [
             'action' => 'Se connecter',
