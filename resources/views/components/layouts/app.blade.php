@@ -16,10 +16,12 @@
     @livewireStyles
     @fluxAppearance
 </head>
-<body>
-<main>
+<body class="min-h-screen">
+<x-header/>
+<x-sidebar/>
+<flux:main container>
     {{ $slot }}
-</main>
+</flux:main>
 @livewireScripts
 @fluxScripts
 </body>

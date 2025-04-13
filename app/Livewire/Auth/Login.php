@@ -4,18 +4,21 @@ declare(strict_types=1);
 
 namespace App\Livewire\Auth;
 
+use App\Livewire\Home;
 use Illuminate\Contracts\View\View;
-use Livewire\Attributes\Layout;
 use Livewire\Component;
 use App\Livewire\Forms\Auth\LoginForm;
 
-#[Layout('components.layouts.guest')]
 class Login extends Component
 {
     public LoginForm $form;
 
     public function mount(): void
     {
+        if (auth()->check()) {
+            $this->redirect(Home::class);
+        }
+
         $this->form->fill(old());
     }
 
@@ -26,12 +29,19 @@ class Login extends Component
 
     public function google(): void
     {
+        // TODO: Implement Google login
     }
 
     public function login(): void
     {
+        if (auth()->check()) {
+            $this->redirect(Home::class);
+        }
+
         $this->validate();
 
         $this->form->authenticate();
+
+        $this->redirect(Home::class);
     }
 }
