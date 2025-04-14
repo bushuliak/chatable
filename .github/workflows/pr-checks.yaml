@@ -1,3 +1,4 @@
+# Language: yaml
 name: Run Artisan Tests
 
 on:
@@ -24,6 +25,12 @@ jobs:
         run: |
           cp .env.example .env
           php artisan key:generate --force
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build assets with Vite
+        run: npm run build
 
       - name: Run artisan tests
         run: php artisan test
