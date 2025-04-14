@@ -44,3 +44,7 @@ it('logs in with valid credentials', function () {
 
     expect(auth()->check())->toBeTrue();
 });
+
+it('fails', function () {
+    expect(false)->toBeTrue();
+});
