@@ -17,7 +17,7 @@ class Callback extends Component
     {
         $googleUser = Socialite::driver('google')->user();
 
-        $user = User::updateOrCreate(
+        $user = User::firstOrCreate(
             attributes: [
                 'email' => $googleUser->email,
             ],

@@ -19,8 +19,6 @@ class Register extends Component
         if (auth()->check()) {
             $this->redirect(Home::class);
         }
-
-        $this->form->fill(old());
     }
 
     public function render(): View

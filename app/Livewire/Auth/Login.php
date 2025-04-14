@@ -19,8 +19,6 @@ class Login extends Component
         if (auth()->check()) {
             $this->redirect(Home::class);
         }
-
-        $this->form->fill(old());
     }
 
     public function render(): View
@@ -35,10 +33,6 @@ class Login extends Component
 
     public function login(): void
     {
-        if (auth()->check()) {
-            $this->redirect(Home::class);
-        }
-
         $this->validate();
 
         $this->form->authenticate();
